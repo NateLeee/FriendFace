@@ -13,13 +13,23 @@ struct UserView: View {
     
     var body: some View {
         VStack {
-            Text("\(user.age)")
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Age: \(user.age)")
+                    
+                    Text("Username: \(user.name)")
+                    
+                    Text("Company: \(user.company)")
+                }
+                
+                Spacer()
+            }
+            .padding([.horizontal, .vertical])
             
-            Text("\(user.name)")
-            
-            Text("\(user.company)")
+            List(user.friends) { friend in
+                Text("\(friend.name)")
+            }
         }
         .navigationBarTitle("\(user.name)", displayMode: .inline)
     }
 }
-
