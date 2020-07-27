@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA0C72B024CEE321003E0B4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72AF24CEE321003E0B4A /* User.swift */; };
 		FA0C72B224CEE332003E0B4A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72B124CEE332003E0B4A /* Friend.swift */; };
+		FA0C72B424CEEB4B003E0B4A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72B324CEEB4B003E0B4A /* UserView.swift */; };
 		FAEB2AEC24CEE03C008479BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2AEB24CEE03C008479BF /* AppDelegate.swift */; };
 		FAEB2AEE24CEE03C008479BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2AED24CEE03C008479BF /* SceneDelegate.swift */; };
 		FAEB2AF124CEE03C008479BF /* FriendFace.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEB2AEF24CEE03C008479BF /* FriendFace.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		FA0C72AF24CEE321003E0B4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA0C72B124CEE332003E0B4A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		FA0C72B324CEEB4B003E0B4A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		FAEB2AE824CEE03C008479BF /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAEB2AEB24CEE03C008479BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAEB2AED24CEE03C008479BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				FAEB2AF224CEE03C008479BF /* ContentView.swift */,
+				FA0C72B324CEEB4B003E0B4A /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				FA0C72B224CEE332003E0B4A /* Friend.swift in Sources */,
 				FA0C72B024CEE321003E0B4A /* User.swift in Sources */,
 				FAEB2AEE24CEE03C008479BF /* SceneDelegate.swift in Sources */,
+				FA0C72B424CEEB4B003E0B4A /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
