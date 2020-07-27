@@ -30,7 +30,6 @@ struct UserView: View {
             List(user.friends) { friend in
                 NavigationLink(
                     destination: FriendView(
-                        friend: friend,
                         user: self.findUser(by: friend.id)
                     )
                 ) {

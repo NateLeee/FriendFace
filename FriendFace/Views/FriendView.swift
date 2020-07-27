@@ -9,14 +9,13 @@
 import SwiftUI
 
 struct FriendView: View {
-    var friend: Friend
     var user: User
     
     var body: some View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Friend Name: \(friend.name)")
+                    Text("Friend Name: \(user.name)")
                     
                     Text("Friend's UserID: \(user.id)")
                     
@@ -31,7 +30,7 @@ struct FriendView: View {
             
             Spacer()
         }
-        .navigationBarTitle("\(friend.name)", displayMode: .inline)
+        .navigationBarTitle("\(user.name)", displayMode: .inline)
     }
     
 }
