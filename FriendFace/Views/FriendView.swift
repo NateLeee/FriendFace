@@ -14,9 +14,22 @@ struct FriendView: View {
     
     var body: some View {
         VStack {
-            Text("Friend Name: \(friend.name)")
+            HStack {
+                VStack(alignment: .leading) {
+                    Text("Friend Name: \(friend.name)")
+                    
+                    Text("Friend's UserID: \(user.id)")
+                    
+                    Text("User's Age: \(user.age)")
+                    
+                    Text("User's Company: \(user.company)")
+                }
+                
+                Spacer()
+            }
+            .padding()
             
-            Text("Friend's UserID: \(user.name)")
+            Spacer()
         }
         .navigationBarTitle("\(friend.name)", displayMode: .inline)
     }

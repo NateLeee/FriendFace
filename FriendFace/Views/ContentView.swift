@@ -14,8 +14,10 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List(users) { user in
-                NavigationLink(destination: UserView(user: user)) {
-                     Text("\(user.name)")
+                NavigationLink(
+                    destination: UserView(allUsers: self.users, user: user)
+                ) {
+                    Text("\(user.name)")
                 }
             }
             .navigationBarTitle("Friend Face")

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct UserView: View {
+    var allUsers: [User]
     var user: User
     
     var body: some View {
@@ -27,11 +28,20 @@ struct UserView: View {
             .padding([.horizontal, .vertical])
             
             List(user.friends) { friend in
-                NavigationLink(destination: FriendView(friend: <#T##Friend#>, user: <#T##User#>)) {
+                NavigationLink(
+                    destination: FriendView(
+                        friend: friend,
+                        user: self.findUser(by: friend.id)
+                    )
+                ) {
                     Text("\(friend.name)")
                 }
             }
         }
         .navigationBarTitle("\(user.name)", displayMode: .inline)
+    }
+    
+    func findUser(by id: String) -> User {
+        allUsers.first { $0.id == id }!
     }
 }
