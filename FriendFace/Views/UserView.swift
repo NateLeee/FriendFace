@@ -27,7 +27,9 @@ struct UserView: View {
             .padding([.horizontal, .vertical])
             
             List(user.friends) { friend in
-                Text("\(friend.name)")
+                NavigationLink(destination: FriendView(friend: <#T##Friend#>, user: <#T##User#>)) {
+                    Text("\(friend.name)")
+                }
             }
         }
         .navigationBarTitle("\(user.name)", displayMode: .inline)
