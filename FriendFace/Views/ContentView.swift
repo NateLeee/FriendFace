@@ -9,8 +9,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var users: [User] = []
+    
     var body: some View {
-        Text("Hello, World!")
+        List(users) { user in
+            Text("\(user.name)")
+        }
+        .onAppear(perform: downloadJSON)
+    }
+    
+    func downloadJSON() {
+        let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard error == nil else {
+                fatalError("URLSession.shared.dataTask error!")
+            }
+            guard let data = data else {
+                fatalError("URLSession.shared.dataTask data is nil!")
+            }
+            
+            let jsonDecoder = JSONDecoder()
+            if let decoded = try? jsonDecoder.decode([User].self, from: data) {
+                DispatchQueue.main.async {
+                    self.users = decoded
+                }
+            }
+        }.resume() // ALWAYS .resume()!!!
     }
 }
 

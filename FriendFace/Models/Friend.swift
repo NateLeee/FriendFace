@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Friend: Codable {
+    var id, name: String
+}

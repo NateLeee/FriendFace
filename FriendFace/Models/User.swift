@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct User: Codable, Identifiable {
+    var id: String
+    var name: String
+    var age: Int
+    var company: String
+    var friends: [Friend]
+}
