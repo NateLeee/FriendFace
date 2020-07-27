@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0B8F8024CF1D520074B218 /* friendface.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0B8F7F24CF1D520074B218 /* friendface.json */; };
 		FA0C72B024CEE321003E0B4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72AF24CEE321003E0B4A /* User.swift */; };
 		FA0C72B224CEE332003E0B4A /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72B124CEE332003E0B4A /* Friend.swift */; };
 		FA0C72B424CEEB4B003E0B4A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C72B324CEEB4B003E0B4A /* UserView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0B8F7F24CF1D520074B218 /* friendface.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendface.json; sourceTree = "<group>"; };
 		FA0C72AF24CEE321003E0B4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA0C72B124CEE332003E0B4A /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		FA0C72B324CEEB4B003E0B4A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0B8F8124CF1D560074B218 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B8F7F24CF1D520074B218 /* friendface.json */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
 		FAEB2ADF24CEE03C008479BF = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +81,7 @@
 				FAEB2B0224CEE0F3008479BF /* Models */,
 				FAEB2B0324CEE0FB008479BF /* Views */,
 				FAEB2AF424CEE03F008479BF /* Assets.xcassets */,
+				FA0B8F8124CF1D560074B218 /* Stub */,
 				FAEB2AF924CEE03F008479BF /* LaunchScreen.storyboard */,
 				FAEB2AFC24CEE03F008479BF /* Info.plist */,
 				FAEB2AF624CEE03F008479BF /* Preview Content */,
@@ -166,6 +177,7 @@
 			files = (
 				FAEB2AFB24CEE03F008479BF /* LaunchScreen.storyboard in Resources */,
 				FAEB2AF824CEE03F008479BF /* Preview Assets.xcassets in Resources */,
+				FA0B8F8024CF1D520074B218 /* friendface.json in Resources */,
 				FAEB2AF524CEE03F008479BF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
