@@ -11,7 +11,12 @@ import SwiftUI
 struct ContentView: View {
     // @State private var users: [User] = []
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
+    @FetchRequest(
+        entity: User.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \User.name, ascending: true)
+        ]
+    ) var users: FetchedResults<User>
     
     var body: some View {
         NavigationView {
@@ -43,7 +48,12 @@ struct ContentView: View {
             if let decoded = try? jsonDecoder.decode([User].self, from: data) {
                 DispatchQueue.main.async {
                     // self.users = decoded
-                    try? self.moc.save()
+                    // Now it still tries to fetch data, but it just can't save them.
+                    do {
+                        try self.moc.save()
+                    } catch let error {
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }.resume() // ALWAYS .resume()!!!
