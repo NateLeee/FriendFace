@@ -27,17 +27,17 @@ struct UserView: View {
             }
             .padding([.horizontal, .vertical])
             
-//            List(user.friends, id: \.id) { friend in
-//                NavigationLink(
-//                    destination:
-//                    // FriendView(user: self.findUser(by: friend.id))
-//                    Text("\(friend.name ?? "")")
-//                ) {
-//                    Text("\(friend.name ?? "")")
-//                }
-//            }
+            List(user.friendsArray, id: \.id) { friend in
+                NavigationLink(
+                    destination:
+                    // FriendView(user: self.findUser(by: friend.id))
+                    Text("\(friend.name ?? "Unknown Name")")
+                ) {
+                    Text("\(friend.name ?? "Unknown Name")")
+                }
+            }
         }
-        .navigationBarTitle("\(user.name ?? "")", displayMode: .inline)
+        .navigationBarTitle("\(user.name ?? "Unknown Name")", displayMode: .inline)
     }
     
 //    func findUser(by id: String) -> User {

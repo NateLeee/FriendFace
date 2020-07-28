@@ -22,7 +22,13 @@ extension User {
     @NSManaged public var company: String?
     @NSManaged public var age: Int16
     @NSManaged public var friends: NSSet?
-
+    
+    var friendsArray: [Friend] {
+        let set = friends as? Set<Friend> ?? []
+        return set.sorted {
+            $0.name ?? "" < $1.name ?? ""
+        }
+    }
 }
 
 // MARK: Generated accessors for friends
