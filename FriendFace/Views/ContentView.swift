@@ -48,7 +48,7 @@ struct ContentView: View {
                 
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.userInfo[CodingUserInfoKey.context!] = self.moc
-                if let decoded = try? jsonDecoder.decode([User].self, from: data) {
+                if let _ = try? jsonDecoder.decode([User].self, from: data) {
                     DispatchQueue.main.async {
                         // Now it still tries to fetch data, but it just can't save them.
                         do {
