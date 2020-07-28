@@ -17,7 +17,7 @@ public class User: NSManagedObject, Decodable {
         case age
         case name
         case company
-        // case friends
+        case friends
     }
     
     public required convenience init(from decoder: Decoder) throws {

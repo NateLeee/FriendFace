@@ -14,6 +14,7 @@
         <attribute name="company" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -22,6 +23,6 @@
     </entity>
     <elements>
         <element name="Friend" positionX="-54" positionY="-9" width="128" height="73"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
