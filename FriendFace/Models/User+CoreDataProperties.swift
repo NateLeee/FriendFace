@@ -25,9 +25,18 @@ extension User {
     
     var friendsArray: [Friend] {
         let set = friends as? Set<Friend> ?? []
-        return set.sorted {
+        let sortedArray = set.sorted {
             $0.wrappedName < $1.wrappedName
         }
+        
+        var counter = 1
+        sortedArray.forEach { (friend) in
+            print("🤩 \(counter)")
+            print(friend)
+            counter += 1
+        }
+        
+        return sortedArray
     }
     
 }

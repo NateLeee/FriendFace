@@ -32,9 +32,9 @@ public class User: NSManagedObject, Decodable {
         self.age = try container.decode(Int16.self, forKey: .age)
         self.name = try container.decodeIfPresent(String.self, forKey: .name)
         self.company = try container.decodeIfPresent(String.self, forKey: .company)
-        self.friends = try container.decode(Set<Friend>.self, forKey: .friends) as NSSet
-//        let friendsArray = try container.decode([Friend].self, forKey: .friends)
-//        self.friends = NSSet(array: friendsArray)
+        // self.friends = try container.decode(Set<Friend>.self, forKey: .friends) as NSSet
+        let friendsArray = try container.decode([Friend].self, forKey: .friends)
+        self.friends = NSSet(array: friendsArray)
     }
 }
 
