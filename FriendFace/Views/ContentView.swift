@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var users: [User] = []
+    // @State private var users: [User] = []
+    @Environment(\.managedObjectContext) var moc
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     
     var body: some View {
         NavigationView {
             List(users, id: \.id) { user in
                 NavigationLink(
-                    destination: UserView(allUsers: self.users, user: user)
+                    // destination: UserView(allUsers: self.users, user: user)
+                    destination: Text("Hello?")
                 ) {
                     Text("\(user.name ?? "")")
                 }
@@ -36,9 +39,11 @@ struct ContentView: View {
             }
             
             let jsonDecoder = JSONDecoder()
+            jsonDecoder.userInfo[CodingUserInfoKey.context!] = self.moc
             if let decoded = try? jsonDecoder.decode([User].self, from: data) {
                 DispatchQueue.main.async {
-                    self.users = decoded
+                    // self.users = decoded
+                    try? self.moc.save()
                 }
             }
         }.resume() // ALWAYS .resume()!!!
