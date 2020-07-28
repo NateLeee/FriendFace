@@ -22,5 +22,5 @@ extension User {
     @NSManaged public var company: String?
     @NSManaged public var age: Int16
 
-    @NSManaged public var friends: [Friend]
+    // @NSManaged public var friends: [Friend]
 }
