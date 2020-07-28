@@ -19,7 +19,7 @@ struct FriendView: View {
                     
                     Text("Friend's UserID: \(user.id)")
                     
-                    Text("User's Age: \(user.age)")
+                    // Text("User's Age: \(user.age)")
                     
                     Text("User's Company: \(user.company)")
                 }
