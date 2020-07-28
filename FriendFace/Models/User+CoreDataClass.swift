@@ -35,6 +35,13 @@ public class User: NSManagedObject, Decodable {
         // self.friends = try container.decode(Set<Friend>.self, forKey: .friends) as NSSet
         let friendsArray = try container.decode([Friend].self, forKey: .friends)
         self.friends = NSSet(array: friendsArray)
+        
+        var counter = 1
+        friends?.forEach { (friend) in
+            print("🤩 \(counter)")
+            print(friend)
+            counter += 1
+        }
     }
 }
 

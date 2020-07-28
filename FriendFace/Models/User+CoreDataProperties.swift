@@ -31,7 +31,7 @@ extension User {
         
         var counter = 1
         sortedArray.forEach { (friend) in
-            print("🤩 \(counter)")
+            print("😭 \(counter)")
             print(friend)
             counter += 1
         }
