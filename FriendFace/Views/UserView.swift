@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct UserView: View {
-    // var allUsers: [User]
+    @FetchRequest(entity: User.entity(), sortDescriptors: []) var users: FetchedResults<User>
     var user: User
     
     var body: some View {
@@ -30,8 +30,7 @@ struct UserView: View {
             List(user.friendsArray, id: \.id) { friend in
                 NavigationLink(
                     destination:
-                    // FriendView(user: self.findUser(by: friend.id))
-                    Text("\(friend.name ?? "Unknown Name")")
+                    FriendView(user: self.findUser(by: friend.id!))
                 ) {
                     Text("\(friend.name ?? "Unknown Name")")
                 }
@@ -40,7 +39,7 @@ struct UserView: View {
         .navigationBarTitle("\(user.name ?? "Unknown Name")", displayMode: .inline)
     }
     
-//    func findUser(by id: String) -> User {
-//        allUsers.first { $0.id == id }!
-//    }
+    func findUser(by id: String) -> User {
+        users.first { $0.id == id }!
+    }
 }
