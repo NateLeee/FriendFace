@@ -15,13 +15,13 @@ struct FriendView: View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Friend Name: \(user.name)")
+                    Text("Friend Name: \(user.name ?? "")")
                     
-                    Text("Friend's UserID: \(user.id)")
+                    Text("Friend's UserID: \(user.id ?? "")")
                     
                     // Text("User's Age: \(user.age)")
                     
-                    Text("User's Company: \(user.company)")
+                    Text("User's Company: \(user.company ?? "")")
                 }
                 
                 Spacer()
@@ -30,7 +30,7 @@ struct FriendView: View {
             
             Spacer()
         }
-        .navigationBarTitle("\(user.name)", displayMode: .inline)
+        .navigationBarTitle("\(user.name ?? "")", displayMode: .inline)
     }
     
 }

@@ -18,9 +18,9 @@ struct UserView: View {
                 VStack(alignment: .leading) {
                     // Text("Age: \(user.age)")
                     
-                    Text("Username: \(user.name)")
+                    Text("Username: \(user.name ?? "")")
                     
-                    Text("Company: \(user.company)")
+                    Text("Company: \(user.company ?? "")")
                 }
                 
                 Spacer()
@@ -37,7 +37,7 @@ struct UserView: View {
 //                }
 //            }
         }
-        .navigationBarTitle("\(user.name)", displayMode: .inline)
+        .navigationBarTitle("\(user.name ?? "")", displayMode: .inline)
     }
     
     func findUser(by id: String) -> User {

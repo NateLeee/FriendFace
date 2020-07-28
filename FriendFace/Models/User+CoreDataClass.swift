@@ -11,6 +11,8 @@ import Foundation
 import CoreData
 
 @objc(User)
-public class User: NSManagedObject {
-
+public class User: NSManagedObject, Decodable {
+    public required init(from decoder: Decoder) throws {
+        
+    }
 }
