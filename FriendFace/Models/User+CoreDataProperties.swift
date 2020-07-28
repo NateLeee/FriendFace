@@ -26,9 +26,10 @@ extension User {
     var friendsArray: [Friend] {
         let set = friends as? Set<Friend> ?? []
         return set.sorted {
-            $0.name ?? "" < $1.name ?? ""
+            $0.wrappedName < $1.wrappedName
         }
     }
+    
 }
 
 // MARK: Generated accessors for friends

@@ -20,4 +20,7 @@ extension Friend {
     @NSManaged public var id: String?
     @NSManaged public var name: String?
 
+    public var wrappedName: String {
+        self.name ?? "Unknown Name"
+    }
 }
