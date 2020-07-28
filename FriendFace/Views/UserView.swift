@@ -27,15 +27,15 @@ struct UserView: View {
             }
             .padding([.horizontal, .vertical])
             
-//            List(user.friends) { friend in
-//                NavigationLink(
-//                    destination: FriendView(
-//                        user: self.findUser(by: friend.id)
-//                    )
-//                ) {
-//                    Text("\(friend.name)")
-//                }
-//            }
+            List(user.friends, id: \.id) { friend in
+                NavigationLink(
+                    destination:
+                    // FriendView(user: self.findUser(by: friend.id))
+                    Text("\(friend.name ?? "")")
+                ) {
+                    Text("\(friend.name ?? "")")
+                }
+            }
         }
         .navigationBarTitle("\(user.name ?? "")", displayMode: .inline)
     }

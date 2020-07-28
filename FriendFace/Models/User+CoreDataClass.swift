@@ -17,6 +17,7 @@ public class User: NSManagedObject, Decodable {
         case age
         case name
         case company
+        case friends
     }
     
     public required convenience init(from decoder: Decoder) throws {
@@ -28,10 +29,10 @@ public class User: NSManagedObject, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
-        // self.age = try container.decodeIfPresent(Int16.self, forKey: .age) ?? <#default value#>
         self.age = try container.decode(Int16.self, forKey: .age)
         self.name = try container.decodeIfPresent(String.self, forKey: .name)
         self.company = try container.decodeIfPresent(String.self, forKey: .company)
+        self.friends = try container.decode([Friend].self, forKey: .friends)
     }
 }
 

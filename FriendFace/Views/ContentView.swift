@@ -24,7 +24,6 @@ struct ContentView: View {
                 NavigationLink(
                     // destination: UserView(allUsers: self.users, user: user)
                     destination: UserView(user: user)
-                    // destination: Text("Hello?")
                 ) {
                     Text("\(user.name ?? "")")
                 }
@@ -35,28 +34,32 @@ struct ContentView: View {
     }
     
     func downloadJSON() {
-        let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard error == nil else {
-                fatalError("URLSession.shared.dataTask error!")
-            }
-            guard let data = data else {
-                fatalError("URLSession.shared.dataTask data is nil!")
-            }
-            
-            let jsonDecoder = JSONDecoder()
-            jsonDecoder.userInfo[CodingUserInfoKey.context!] = self.moc
-            if let decoded = try? jsonDecoder.decode([User].self, from: data) {
-                DispatchQueue.main.async {
-                    // Now it still tries to fetch data, but it just can't save them.
-                    do {
-                        try self.moc.save()
-                    } catch let error {
-                        print(error.localizedDescription)
+        if (users.count > 0) {
+            return
+        } else {
+            let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json")!
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                guard error == nil else {
+                    fatalError("URLSession.shared.dataTask error!")
+                }
+                guard let data = data else {
+                    fatalError("URLSession.shared.dataTask data is nil!")
+                }
+                
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.userInfo[CodingUserInfoKey.context!] = self.moc
+                if let decoded = try? jsonDecoder.decode([User].self, from: data) {
+                    DispatchQueue.main.async {
+                        // Now it still tries to fetch data, but it just can't save them.
+                        do {
+                            try self.moc.save()
+                        } catch let error {
+                            print(error.localizedDescription)
+                        }
                     }
                 }
-            }
-        }.resume() // ALWAYS .resume()!!!
+            }.resume() // ALWAYS .resume()!!!
+        }
     }
 }
 
