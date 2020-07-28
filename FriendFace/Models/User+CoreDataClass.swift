@@ -12,13 +12,9 @@ import CoreData
 
 @objc(User)
 public class User: NSManagedObject, Decodable {
-    /*
-     @NSManaged public var id: String?
-     @NSManaged public var name: String?
-     @NSManaged public var company: String?
-     */
     enum CodingKeys: CodingKey {
         case id
+        case age
         case name
         case company
     }
@@ -32,6 +28,8 @@ public class User: NSManagedObject, Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.id = try container.decodeIfPresent(String.self, forKey: .id)
+        // self.age = try container.decodeIfPresent(Int16.self, forKey: .age) ?? <#default value#>
+        self.age = try container.decode(Int16.self, forKey: .age)
         self.name = try container.decodeIfPresent(String.self, forKey: .name)
         self.company = try container.decodeIfPresent(String.self, forKey: .company)
     }

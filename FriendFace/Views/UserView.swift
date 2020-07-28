@@ -16,7 +16,7 @@ struct UserView: View {
         VStack {
             HStack {
                 VStack(alignment: .leading) {
-                    // Text("Age: \(user.age)")
+                    Text("Age: \(user.age)")
                     
                     Text("Username: \(user.name ?? "")")
                     

@@ -20,5 +20,6 @@ extension User {
     @NSManaged public var id: String?
     @NSManaged public var name: String?
     @NSManaged public var company: String?
+    @NSManaged public var age: Int16
 
 }
