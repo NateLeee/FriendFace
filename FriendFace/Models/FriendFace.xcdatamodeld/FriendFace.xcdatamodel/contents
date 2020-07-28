@@ -3,6 +3,7 @@
     <entity name="Friend" representedClassName="Friend" syncable="YES">
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="isOf" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="friends" inverseEntity="User"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -14,7 +15,7 @@
         <attribute name="company" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend"/>
+        <relationship name="friends" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Friend" inverseName="isOf" inverseEntity="Friend"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -22,7 +23,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Friend" positionX="-54" positionY="-9" width="128" height="73"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Friend" positionX="-54" positionY="-9" width="128" height="88"/>
+        <element name="User" positionX="202.4375" positionY="119.1328125" width="128" height="118"/>
     </elements>
 </model>
