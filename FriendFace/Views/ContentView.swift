@@ -23,7 +23,8 @@ struct ContentView: View {
             List(users, id: \.id) { user in
                 NavigationLink(
                     // destination: UserView(allUsers: self.users, user: user)
-                    destination: Text("Hello?")
+                    destination: UserView(user: user)
+                    // destination: Text("Hello?")
                 ) {
                     Text("\(user.name ?? "")")
                 }
@@ -47,7 +48,6 @@ struct ContentView: View {
             jsonDecoder.userInfo[CodingUserInfoKey.context!] = self.moc
             if let decoded = try? jsonDecoder.decode([User].self, from: data) {
                 DispatchQueue.main.async {
-                    // self.users = decoded
                     // Now it still tries to fetch data, but it just can't save them.
                     do {
                         try self.moc.save()

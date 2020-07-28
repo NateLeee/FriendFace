@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct UserView: View {
-    var allUsers: [User]
+    // var allUsers: [User]
     var user: User
     
     var body: some View {
@@ -40,7 +40,7 @@ struct UserView: View {
         .navigationBarTitle("\(user.name ?? "")", displayMode: .inline)
     }
     
-    func findUser(by id: String) -> User {
-        allUsers.first { $0.id == id }!
-    }
+//    func findUser(by id: String) -> User {
+//        allUsers.first { $0.id == id }!
+//    }
 }
